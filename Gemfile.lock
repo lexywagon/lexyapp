@@ -182,6 +182,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pg
   pry-byebug
   pry-rails

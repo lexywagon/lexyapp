@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209105052) do
+ActiveRecord::Schema.define(version: 20151209112454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "number"
+    t.string   "legi_id"
+    t.integer  "law_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "articles", ["law_id"], name: "index_articles_on_law_id", using: :btree
+
+  create_table "documents", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
+
+  create_table "laws", force: :cascade do |t|
+    t.string   "name"
+    t.string   "legi_cid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +60,16 @@ ActiveRecord::Schema.define(version: 20151209105052) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "versions", force: :cascade do |t|
+    t.integer  "article_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "versions", ["article_id"], name: "index_versions_on_article_id", using: :btree
+
+  add_foreign_key "articles", "laws"
+  add_foreign_key "documents", "users"
+  add_foreign_key "versions", "articles"
 end
