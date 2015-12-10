@@ -16,6 +16,10 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+gem 'sidekiq'
+gem 'sinatra'  # Dependency of sidekiq
+gem 'sidekiq-failures'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
