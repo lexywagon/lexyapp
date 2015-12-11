@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209171235) do
+ActiveRecord::Schema.define(version: 20151211101725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,12 @@ ActiveRecord::Schema.define(version: 20151209171235) do
   create_table "documents", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
   end
 
   add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
