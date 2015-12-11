@@ -16,9 +16,14 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+# Background jobs with sidekiq
 gem 'sidekiq'
 gem 'sinatra'  # Dependency of sidekiq
 gem 'sidekiq-failures'
+
+# File Upload with AWS and paperclip
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
 
 group :development, :test do
   gem 'binding_of_caller'
