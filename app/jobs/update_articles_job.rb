@@ -18,24 +18,31 @@ class UpdateArticlesJob < ActiveJob::Base
     Dir.glob(File.join dir, "legi/global/code_et_TNC_en_vigueur/code_en_vigueur/LEGI/TEXT/00/00/06/07/20/LEGITEXT000006072050/article/**/*.xml") do |article|
       code_du_travail = Law.first
       doc = File.open(article) { |f| Nokogiri::XML(f) }
-      article_id = doc.xpath("//ID").first.content
-      article = Article.where(legi_id: article_id).first
+      article_number = doc.xpath("//META_ARTICLE/NUM").first.content
+      article = Article.where(number: article_number).first
       content = doc.xpath("//BLOC_TEXTUEL/CONTENU").first.content
       if article
         if content != article.versions.last.content
           version =  article.versions.build({
-            content: content
+            legi_id: doc.xpath("//META_COMMUN/ID").first.content,
+            content: content,
+            start_date: Date.parse(doc.xpath("//META_ARTICLE/DATE_DEBUT").first.content),
+            end_date: Date.parse(doc.xpath("//META_ARTICLE/DATE_FIN").first.content),
+            state: doc.xpath("//META_ARTICLE/ETAT").first.content
           })
           version.save
         end
       else
         article = code_du_travail.articles.build({
-          number: doc.xpath("//NUM").first.content,
-          legi_id: doc.xpath("//ID").first.content
+          number: doc.xpath("//META_ARTICLE/NUM").first.content
         })
         article.save
         version =  article.versions.build({
-          content: content
+          legi_id: doc.xpath("//META_COMMUN/ID").first.content,
+          content: content,
+          start_date: Date.parse(doc.xpath("//META_ARTICLE/DATE_DEBUT").first.content),
+          end_date: Date.parse(doc.xpath("//META_ARTICLE/DATE_FIN").first.content),
+          state: doc.xpath("//META_ARTICLE/ETAT").first.content
         })
         version.save
       end
