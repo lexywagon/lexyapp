@@ -1,4 +1,5 @@
 require 'doc_ripper'
+require "pathname"
 
 class DocumentsController < ApplicationController
   def index
@@ -13,16 +14,24 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build(document_params)
 
     upload_file(params[:document][:doc_file])
-    # parse .doc here
+
+    # parsing and updating content column
+    text_file = doc_rip(@document.doc_file_file_name)
+    @document.content = text_file
+
     respond_to do |format|
       if @document.save
-        format.html { redirect_to root_path, notice: 'Document was successfully created.' }
+        format.html { redirect_to document_path(@document), notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @document = Document.find(params[:id])
   end
 
   private
@@ -38,14 +47,12 @@ class DocumentsController < ApplicationController
   end
 
   def doc_rip(file)
-    # memotravail = DocRipper::rip('xxx.docx')
-    # p "-----------------------"
-    # p "-----------------------"
-    # p "-----------------------"
-    # p memotravail.class
+    DocRipper::rip("public/#{file}")
+  end
 
-    # matchdata_codes = memotravail.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la sant))/i)
-    # p matchdata_codes.size
+
+    # matchdata = text_file.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la sant))/i)
+    # p matchdata.size
 
     # # playing with the references
 
@@ -68,5 +75,4 @@ class DocumentsController < ApplicationController
     #   ref_name << "é publique" if reference[:name].include?("sant")
     #   p "#{ref_index} #{ref_num} #{ref_name}"
     # end
-  end
 end
