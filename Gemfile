@@ -16,6 +16,9 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+gem 'aws-sdk'
+gem 'doc_ripper'
+
 gem 'sidekiq'
 gem 'sinatra'  # Dependency of sidekiq
 gem 'sidekiq-failures'
