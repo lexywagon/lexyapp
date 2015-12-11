@@ -16,10 +16,12 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
-#download files in amazon S3
 gem 'aws-sdk'
 gem 'doc_ripper'
 
+gem 'sidekiq'
+gem 'sinatra'  # Dependency of sidekiq
+gem 'sidekiq-failures'
 
 group :development, :test do
   gem 'binding_of_caller'
