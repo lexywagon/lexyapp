@@ -16,6 +16,10 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+#download files in amazon S3
+gem 'aws-sdk'
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
