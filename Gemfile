@@ -16,6 +16,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+gem 'doc_ripper'
+
 # Background jobs with sidekiq
 gem 'sidekiq'
 gem 'sinatra'  # Dependency of sidekiq
