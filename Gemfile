@@ -18,6 +18,7 @@ gem 'nokogiri'
 
 #download files in amazon S3
 gem 'aws-sdk'
+gem 'doc_ripper'
 
 
 group :development, :test do
