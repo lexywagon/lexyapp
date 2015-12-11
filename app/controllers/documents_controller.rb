@@ -16,9 +16,9 @@ class DocumentsController < ApplicationController
     upload_file(params[:document][:doc_file])
 
     # parsing and updating content column
-    text_file = doc_rip(@document.doc_file_file_name)
-    @document.content = text_file
-
+    doc_rip(@document.doc_file_file_name)
+    file_text = File.open('public/memotravail.txt')
+    @document.content = file_text.read
     respond_to do |format|
       if @document.save
         format.html { redirect_to document_path(@document), notice: 'Document was successfully created.' }
@@ -32,6 +32,8 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+    @references = extracting_articles(@document)
+
   end
 
   private
@@ -50,29 +52,19 @@ class DocumentsController < ApplicationController
     DocRipper::rip("public/#{file}")
   end
 
+  def extracting_articles(doc)
+    matchdata = doc.content.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i)
+    references = []
+    matchdata.each_with_index do |data, index|
+      reference = {
+      index: index + 1,
+      num: data[0].strip,
+      name: data[1].strip.capitalize
+    }
+    references << reference
+    end
+    return references
+  end
 
-    # matchdata = text_file.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la sant))/i)
-    # p matchdata.size
 
-    # # playing with the references
-
-    # references = []
-    # matchdata_codes.each_with_index do |data, index|
-    #   reference = {
-    #     index: index + 1,
-    #     num: data[0].strip,
-    #     name: data[1].strip.capitalize
-    #   }
-    #   references << reference
-    # end
-
-    # # cheating but working
-
-    # references.each do |reference|
-    #   ref_index = reference[:index]
-    #   ref_num = reference[:num]
-    #   ref_name = reference[:name]
-    #   ref_name << "é publique" if reference[:name].include?("sant")
-    #   p "#{ref_index} #{ref_num} #{ref_name}"
-    # end
 end
