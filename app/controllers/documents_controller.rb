@@ -19,6 +19,17 @@ class DocumentsController < ApplicationController
     doc_rip(@document.doc_file_file_name)
     file_text = File.open('public/memotravail.txt')
     @document.content = file_text.read
+
+    @references = extracting_articles(@document)
+    @references.each do |reference|
+      law_name = reference[:name].downcase
+      law = Law.where(name: law_name).first
+      article_number = reference[:num].gsub(". ", "")
+      article = Article.where(law_id: law.id, number: article_number).first
+      @reference = @document.references.build({article_id: article.id})
+      @reference.save
+    end
+
     respond_to do |format|
       if @document.save
         format.html { redirect_to document_path(@document), notice: 'Document was successfully created.' }

@@ -1,15 +1,21 @@
 require "nokogiri"
 
-code_du_travail = Law.create({name: "code du travail", legi_cid: "LEGITEXT000006072050"})
-
-Dir.glob("db/LEGITEXT000006072050/article/**/*.xml") do |article|
+Dir.glob("db/legi/*/article/**/*.xml") do |article|
   doc = File.open(article) { |f| Nokogiri::XML(f) }
+
+  law_cid = doc.xpath("//CONTEXTE/TEXTE/@cid").first.value
+  law = Law.where(legi_cid: law_cid).first
+  unless law
+    law_name = doc.xpath("//CONTEXTE/TEXTE/TITRE_TXT/@c_titre_court").first.value.downcase
+    law = Law.create({name: law_name, legi_cid: law_cid})
+  end
+
   article_number = doc.xpath("//META_ARTICLE/NUM").first.content
-  similar_article = Article.where(number: article_number).first
+  similar_article = Article.where(law_id: law.id, number: article_number).first
   if similar_article
     article = similar_article
   else
-    article = code_du_travail.articles.build({
+    article = law.articles.build({
       number: article_number
     })
     article.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211152341) do
+ActiveRecord::Schema.define(version: 20151214130621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,9 @@ ActiveRecord::Schema.define(version: 20151211152341) do
 
   create_table "documents", force: :cascade do |t|
     t.integer  "user_id"
+    t.text     "text"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.string   "text_file_name"
-    t.string   "text_content_type"
-    t.integer  "text_file_size"
-    t.datetime "text_updated_at"
     t.string   "doc_file_file_name"
     t.string   "doc_file_content_type"
     t.integer  "doc_file_file_size"
@@ -48,6 +45,16 @@ ActiveRecord::Schema.define(version: 20151211152341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "references", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "document_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "references", ["article_id"], name: "index_references_on_article_id", using: :btree
+  add_index "references", ["document_id"], name: "index_references_on_document_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -83,5 +90,7 @@ ActiveRecord::Schema.define(version: 20151211152341) do
 
   add_foreign_key "articles", "laws"
   add_foreign_key "documents", "users"
+  add_foreign_key "references", "articles"
+  add_foreign_key "references", "documents"
   add_foreign_key "versions", "articles"
 end
