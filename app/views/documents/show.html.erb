@@ -1,1 +1,10 @@
 <h1>Show document</h1>
+
+<%= @document.content %>
+
+<% @references.each do |ref| %>
+  <p><strong>Nr: </strong><%= ref[:index] %></p>
+  <p><strong>Article: </strong><%= ref[:num] %></p>
+  <p><strong>Law: </strong><%= ref[:name] %></p>
+  <p>*****</p>
+<% end %>

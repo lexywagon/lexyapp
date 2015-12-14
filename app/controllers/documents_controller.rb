@@ -1,4 +1,5 @@
 require 'doc_ripper'
+require "pathname"
 
 class DocumentsController < ApplicationController
   def index
@@ -13,16 +14,25 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build(document_params)
 
     upload_file(params[:document][:doc_file])
-    # parse .doc here
+
+    # parsing and updating content column
+    doc_rip(@document.doc_file_file_name)
+    file_text = File.open('public/memotravail.txt')
+    @document.content = file_text.read
     respond_to do |format|
       if @document.save
-        format.html { redirect_to root_path, notice: 'Document was successfully created.' }
+        format.html { redirect_to document_path(@document), notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @document = Document.find(params[:id])
+    @references = extracting_articles(@document)
   end
 
   private
@@ -38,35 +48,24 @@ class DocumentsController < ApplicationController
   end
 
   def doc_rip(file)
-    # memotravail = DocRipper::rip('xxx.docx')
-    # p "-----------------------"
-    # p "-----------------------"
-    # p "-----------------------"
-    # p memotravail.class
-
-    # matchdata_codes = memotravail.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la sant))/i)
-    # p matchdata_codes.size
-
-    # # playing with the references
-
-    # references = []
-    # matchdata_codes.each_with_index do |data, index|
-    #   reference = {
-    #     index: index + 1,
-    #     num: data[0].strip,
-    #     name: data[1].strip.capitalize
-    #   }
-    #   references << reference
-    # end
-
-    # # cheating but working
-
-    # references.each do |reference|
-    #   ref_index = reference[:index]
-    #   ref_num = reference[:num]
-    #   ref_name = reference[:name]
-    #   ref_name << "é publique" if reference[:name].include?("sant")
-    #   p "#{ref_index} #{ref_num} #{ref_name}"
-    # end
+    DocRipper::rip("public/#{file}")
   end
+
+  def extracting_articles(doc)
+    matchdata = doc.content.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i)
+    references = []
+    matchdata.each_with_index do |data, index|
+      reference = {
+      index: index + 1,
+      num: data[0].strip,
+      name: data[1].strip.capitalize
+    }
+    references << reference
+    end
+    return references
+  end
+
+  def display_doc_nicely(text)
+  end
+
 end

@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf-8
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: lexyapp_development
+  encoding: utf-8
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +59,7 @@ development:
 test:
   <<: *default
   database: lexyapp_test
+  encoding: utf-8
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +83,6 @@ test:
 production:
   <<: *default
   database: lexyapp_production
+  encoding: utf-8
   username: lexyapp
   password: <%= ENV['LEXYAPP_DATABASE_PASSWORD'] %>

@@ -27,13 +27,17 @@ ActiveRecord::Schema.define(version: 20151211152341) do
 
   create_table "documents", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "text"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "text_file_name"
+    t.string   "text_content_type"
+    t.integer  "text_file_size"
+    t.datetime "text_updated_at"
     t.string   "doc_file_file_name"
     t.string   "doc_file_content_type"
     t.integer  "doc_file_file_size"
     t.datetime "doc_file_updated_at"
+    t.text     "content"
   end
 
   add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
