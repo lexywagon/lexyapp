@@ -1,5 +1,5 @@
 require 'doc_ripper'
-require "pathname"
+require 'docx'
 
 class DocumentsController < ApplicationController
   def index
@@ -16,7 +16,6 @@ class DocumentsController < ApplicationController
     upload_file(params[:document][:doc_file])
 
     # parsing and updating content column
-    doc_rip(@document.doc_file_file_name)
     file_text = File.open('public/memotravail.txt')
     @document.content = file_text.read
     respond_to do |format|
@@ -33,6 +32,7 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @references = extracting_articles(@document)
+    @paragraphs = display_docx(@document.doc_file_file_name)
   end
 
   private
@@ -65,7 +65,8 @@ class DocumentsController < ApplicationController
     return references
   end
 
-  def display_doc_nicely(text)
+  def display_docx(file)
+    doc = Docx::Document.open("public/#{file}")
+    return doc.paragraphs
   end
-
 end
