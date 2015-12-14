@@ -16,7 +16,11 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'nokogiri'
 
+# doc_ripper: .docx to .txt
 gem 'doc_ripper'
+
+# docx gem: reading .docx
+gem 'docx', '~> 0.2.07', :require => ["docx"]
 
 # Background jobs with sidekiq
 gem 'sidekiq'
