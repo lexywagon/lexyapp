@@ -33,7 +33,6 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @references = extracting_articles(@document)
-
   end
 
   private
@@ -66,5 +65,7 @@ class DocumentsController < ApplicationController
     return references
   end
 
+  def display_doc_nicely(text)
+  end
 
 end
