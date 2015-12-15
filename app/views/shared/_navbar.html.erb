@@ -1,9 +1,10 @@
 <nav class="navbar-wagon">
   <div class="container navbar-wagon-container">
 
-    <a href="">
-      <%= image_tag "logo.png", class: "navbar-wagon-logo" %>
-    </a>
+      <%= link_to root_path do %>
+        <%=  image_tag "logo.jpg", class: "navbar-wagon-logo navbar-wagon-container" %>
+        <% end  %>
+
 
     <div class="navbar-wagon-pusher"></div>
 
@@ -42,6 +43,10 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% if user_signed_in? %>
+      <%= link_to t(".top_call_to_action", default: "Upload a document"), documents_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% else %>
+      <%= link_to t(".top_call_to_action", default: "Try Lexy for free"), documents_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
   </div>
 </nav>
