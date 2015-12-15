@@ -1,0 +1,10 @@
+<h1>References#new</h1>
+<% @paragraphs.each do |p| %>
+  <%= p[:content].html_safe %>
+  <% p[:references].each do |ref| %>
+    <%= ref.article.law.name %>
+    <%= ref.article.number %>
+    <%= ref.article.versions.last.content %>
+    <%= ref.status %>
+  <% end %>
+<% end %>
