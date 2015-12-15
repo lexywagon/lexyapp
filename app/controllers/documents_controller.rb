@@ -82,6 +82,6 @@ class DocumentsController < ApplicationController
   end
 
   def doc_file_path(file)
-    Rails.root.join('public', 'tmp', file)
+    Rails.root.join('public', file)
   end
 end
