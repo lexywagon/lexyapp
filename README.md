@@ -4,5 +4,5 @@ seed DB with "code du travail"
 
 ```
 $ rake db:create
-$ psql lexyapp_development < lexyapp.pgsql
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U *USERNAME* -d lexyapp_development 20151215_lexyapp_development.dump
 ```
