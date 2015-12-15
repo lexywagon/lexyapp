@@ -1,2 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+  <%= image_tag "banner-logo", class: "img-responsive" %>
+
+  <h1>Your digital support lawyer</h1>
+  <%= link_to "Start your free trial now!", new_user_registration_path, class: "btn btn-primary" %>
+</div>
+
+<div class="home-description">
+<h1>Lexy helps legal professionals easily manage their knowledge</h1>
+<p>What Lexy does for you:</p>
+<ul>
+  <li>Tells you which clients are affected by a legislative change</li>
+  <li>Verifying the validity of your legal knowhow</li>
+  <li>Informs you about the changes relevant to you</li>
+</ul>
+</div>
+
+<div>
+  <h1>How it works?</h1>
+</div>
+
+<div class="home-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <i class="fa fa-file-text fa-home"></i>
+          <div class="caption">
+            <h3>Upload a file</h3>
+            <p>We take confidentiality and cyber-security seriously. <%= link_to "Here's how",root_path %></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <i class="fa fa-flag fa-home"></i>
+          <div class="caption">
+            <h3>Receive real-time alerts</h3>
+            <p>Want to know how Lexy can do that? <%= link_to "More info",root_path %></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <i class="fa fa-check-square-o fa-home"></i>
+          <div class="caption">
+            <h3>Assess the impact</h3>
+            <p>With the help of useful content and connections</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+   <%= link_to "Upload a document for free!", new_user_registration_path, class: "btn btn-primary" %>
+</div>
+
