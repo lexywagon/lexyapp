@@ -1,6 +1,43 @@
-<h1>Index documents</h1>
+<div class="container text-center">
+  <h1>My Lexy dashboard</h1>
+</div>
 
-<%= form_for @document do |f| %>
-  <%= f.file_field :doc_file %>
-  <%= f.submit %>
-<% end %>
+<div class="documents">
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Documents</h3>
+      </div>
+       <div class="panel-body">
+        <table class="table table-bordered table-responsive table-hover">
+          <thead>
+            <tr>
+              <th>Nr</th>
+              <th>Document</th>
+              <th>Date first upload</th>
+              <th>Date last update</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @documents.each do |doc| %>
+              <tr>
+                <td><%= doc.id %></td>
+                <td><%= doc.doc_file_file_name %></td>
+                <td><%= doc.created_at.strftime("%d %B %Y") %></td>
+                <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
+                <td class="success">Up-to-date</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-footer">
+        <%= form_for @document do |f| %>
+        <%= f.file_field :doc_file %>
+        <%= f.submit %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
