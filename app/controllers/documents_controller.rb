@@ -13,11 +13,11 @@ class DocumentsController < ApplicationController
   def create
     @document = current_user.documents.build(document_params)
 
-    upload_file(params[:document][:doc_file])
+    doc_file = upload_file(params[:document][:doc_file])
 
-    # parsing and updating content column
-    file_text = File.open('public/memotravail.txt')
-    @document.content = file_text.read
+    @document.paragraphs = parse_doc_paragraphs(doc_file)
+
+    File.delete(doc_file_path(doc_file))
 
     @references = extracting_articles(@document)
     @references.each do |reference|
@@ -43,7 +43,6 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @references = extracting_articles(@document)
-    @paragraphs = display_docx(@document.doc_file_file_name)
   end
 
   private
@@ -53,31 +52,36 @@ class DocumentsController < ApplicationController
   end
 
   def upload_file(uploaded_file)
-    File.open(Rails.root.join('public', uploaded_file.original_filename), 'wb') do |file|
+    File.open(doc_file_path(uploaded_file.original_filename), 'wb') do |file|
       file.write(uploaded_file.read)
     end
-  end
-
-  def doc_rip(file)
-    DocRipper::rip("public/#{file}")
+    uploaded_file.original_filename
   end
 
   def extracting_articles(doc)
-    matchdata = doc.content.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i)
     references = []
-    matchdata.each_with_index do |data, index|
-      reference = {
-      index: index + 1,
-      num: data[0].strip,
-      name: data[1].strip.capitalize
-    }
-    references << reference
+    doc.paragraphs.each do |paragraph|
+      matchdata = paragraph.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i)
+      matchdata.each_with_index do |data, index|
+        reference = {
+        index: index + 1,
+        num: data[0].strip,
+        name: data[1].strip.capitalize
+      }
+      references << reference
+      end
     end
     return references
   end
 
-  def display_docx(file)
-    doc = Docx::Document.open("public/#{file}")
-    return doc.paragraphs
+  def parse_doc_paragraphs(file)
+    doc = Docx::Document.open(doc_file_path(file))
+    return doc.paragraphs.map do |paragraph|
+      paragraph.to_html.html_safe
+    end
+  end
+
+  def doc_file_path(file)
+    Rails.root.join('public', 'tmp', file)
   end
 end

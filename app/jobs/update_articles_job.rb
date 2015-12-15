@@ -15,7 +15,9 @@ class UpdateArticlesJob < ActiveJob::Base
     File.delete(file)
     dir = file.gsub("legi_", "").gsub(".tar.gz", "")
 
+    # change path directory to get all laws
     Dir.glob(File.join dir, "legi/global/code_et_TNC_en_vigueur/code_en_vigueur/LEGI/TEXT/00/00/06/07/20/LEGITEXT000006072050/article/**/*.xml") do |article|
+      # change code du travail with all laws
       code_du_travail = Law.first
       doc = File.open(article) { |f| Nokogiri::XML(f) }
       article_number = doc.xpath("//META_ARTICLE/NUM").first.content
@@ -31,6 +33,11 @@ class UpdateArticlesJob < ActiveJob::Base
             state: doc.xpath("//META_ARTICLE/ETAT").first.content
           })
           version.save
+          # trigger TODO
+          # article.references.each do |ref|
+          #   ref.status = "pending"
+          #   ref.save
+          # end
         end
       else
         article = code_du_travail.articles.build({

@@ -1,6 +1,6 @@
 <h1>Show document</h1>
-<p><% @paragraphs.each do |p| %></p>
-  <%= p.to_html.html_safe %>
+<% @document.paragraphs.each do |p| %>
+  <%= p.html_safe %>
 <% end  %>
 
 
