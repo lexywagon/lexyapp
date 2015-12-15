@@ -26,7 +26,8 @@
                 <td><%= doc.doc_file_file_name %></td>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
-                <td class="success">Up-to-date</td>
+<!--                 Only if doc.up-to-date == true
+ -->                <td class="success">Up-to-date</td>
               </tr>
             <% end %>
           </tbody>
