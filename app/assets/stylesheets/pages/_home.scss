@@ -2,3 +2,9 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+ .fa-home {
+    color: $brand-primary;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 120px;
+}
