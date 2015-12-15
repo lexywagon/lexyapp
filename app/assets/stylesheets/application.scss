@@ -13,3 +13,33 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+// Devise - TODO move to correct file
+
+.log-in{
+  width: 450px;
+  margin:auto;
+  text-align:center;
+  padding-top:10%;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.panel-heading{
+  background-color:#fff;
+}
+
+.form-control{
+  width: 250px;
+  text-align: center;
+  margin:auto;
+}
+
+.panel-body p{
+  color:#555;
+}
+
+.panel-footer-custom {
+  background-color: lighten($gray-lighter, 5%);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
