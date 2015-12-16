@@ -1,8 +1,8 @@
-<div class="home-banner">
-  <%= image_tag "banner-logo", class: "img-responsive" %>
-
-  <h1>Your digital support lawyer</h1>
-  <%= link_to "Start your free trial now!", documents_path, class: "btn btn-primary" %>
+<div class="banner text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_url "banner-logo" %>);">
+    <div class="banner-content">
+      <h1>Legal documents made responsive</h1>
+      <%= link_to "Start your free trial now!", documents_path, class: "btn btn-primary" %>
+    </div>
 </div>
 
 <div class="home-description">
@@ -15,28 +15,34 @@
 </ul>
 </div>
 
-<div>
+<div class="text-center">
   <h1>How it works?</h1>
 </div>
 
 <div class="home-cards">
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4">
         <div class="thumbnail">
           <i class="fa fa-file-text fa-home"></i>
           <div class="caption">
             <h3>Upload a file</h3>
-            <p>We take confidentiality and cyber-security seriously. <%= link_to "Here's how",root_path %></p>
+            <p>We take confidentiality and cyber-security seriously.</p>
+            <p> <%= link_to "Here's how.",root_path %></p>
           </div>
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
         <div class="thumbnail">
           <i class="fa fa-flag fa-home"></i>
           <div class="caption">
             <h3>Receive real-time alerts</h3>
-            <p>Want to know how Lexy can do that? <%= link_to "More info",root_path %></p>
+            <p>Want to know how Lexy can do that?</p>
+            <p><%= link_to "More info",root_path %></p>
           </div>
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
         <div class="thumbnail">
           <i class="fa fa-check-square-o fa-home"></i>
           <div class="caption">
@@ -49,7 +55,29 @@
   </div>
 </div>
 
+
+<div class="banner text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_url "businesslaw" %>);">
+    <div class="banner-content">
+      <h1>Receive alerts most relevant to your clients</h1>
+      <%= link_to "Upload a document for free!", new_user_registration_path, class: "btn btn-primary" %>
+    </div>
+</div>
+
 <div>
-   <%= link_to "Upload a document for free!", new_user_registration_path, class: "btn btn-primary" %>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- div class="card" -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- div class="card" -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- div class="card" -->
+    </div>
+  </div>
 </div>
 
