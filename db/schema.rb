@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20151216200253) do
   create_table "references", force: :cascade do |t|
     t.integer  "article_id"
     t.integer  "document_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "status",           default: "pending"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "status",           default: "uptodate"
     t.integer  "paragraph_number"
   end
 
