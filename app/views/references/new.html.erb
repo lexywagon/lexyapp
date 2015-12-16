@@ -1,5 +1,5 @@
 <h1>References#new</h1>
-<%= form_tag(controller: "references", action: "create", method: "post") do %>!
+<%= form_tag(controller: "references", action: "create", method: "post") do %>
   <% @paragraphs.each do |p| %>
     <%= p[:content].html_safe %>
     <div class="reference">
