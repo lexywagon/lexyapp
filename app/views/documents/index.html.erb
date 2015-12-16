@@ -39,11 +39,10 @@
       </div>
       <div class="panel-footer">
         <%= form_for @document do |f| %>
-        <%= f.label "Select a document" %>
         <%= f.file_field :doc_file %>
-        <%= f.submit "Upload" %>
         <%= f.label "Name" %>
         <%= f.text_field :name %>
+        <%= f.submit "Upload", class: "btn btn-primary" %>
       <% end %>
       </div>
     </div>
