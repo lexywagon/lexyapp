@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARTICLE>
+<META>
+<META_COMMUN>
+<ID>LEGIARTI000006900883</ID>
+<ANCIEN_ID>WXXXXXXXXXX1225L0040XX0A</ANCIEN_ID>
+<ORIGINE>LEGI</ORIGINE>
+<URL>article/LEGI/ARTI/00/00/06/90/08/LEGIARTI000006900883.xml</URL>
+<NATURE>Article</NATURE>
+</META_COMMUN>
+<META_SPEC>
+<META_ARTICLE>
+<NUM>L1225-4</NUM>
+
+<ETAT>VIGUEUR</ETAT>
+
+<DATE_DEBUT>2008-05-01</DATE_DEBUT>
+<DATE_FIN>2999-01-01</DATE_FIN>
+
+
+<TYPE>AUTONOME</TYPE>
+</META_ARTICLE>
+</META_SPEC>
+</META>
+<CONTEXTE>
+<TEXTE autorite="" cid="LEGITEXT000006072050" date_publi="2999-01-01" date_signature="2999-01-01" ministere="" nature="CODE" nor="" num="">
+<TITRE_TXT c_titre_court="Code du travail" debut="1973-01-03" fin="2999-01-01" id_txt="LEGITEXT000006072050">Code du travail</TITRE_TXT>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006112874">Partie législative  </TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006132321">Première partie : Les relations individuelles de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006145393">Livre II : Le contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006160709">Titre II : Formation et exécution du contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006177854">Chapitre V : Maternité, paternité, adoption et éducation des enfants</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006189422">Section 1 : Protection de la grossesse et de la maternité</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006195590">Sous-section 1 : Embauche, mutation et licenciement.</TITRE_TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TEXTE>
+</CONTEXTE>
+
+<VERSIONS>
+<VERSION etat="VIGUEUR">
+<LIEN_ART debut="2008-05-01" etat="VIGUEUR" fin="2999-01-01" id="LEGIARTI000006900883" num="L1225-4" origine="LEGI"/>
+</VERSION>
+</VERSIONS>
+<NOTA>
+<CONTENU>
+<br/>
+<br/>
+<br/>
+<p>
+<br clear="none"/>
+</p>
+</CONTENU>
+</NOTA>
+<BLOC_TEXTUEL>
+<CONTENU>
+<br/>   Aucun employeur ne peut rompre le contrat de travail d'une salariée lorsqu'elle est en état de grossesse médicalement constaté et pendant l'intégralité des périodes de suspension du contrat de travail auxquelles elle a droit au titre du congé de maternité, qu'elle use ou non de ce droit, ainsi que pendant les quatre semaines suivant l'expiration de ces périodes.<br/>
+<br/>   Toutefois, l'employeur peut rompre le contrat s'il justifie d'une faute grave de l'intéressée, non liée à l'état de grossesse, ou de son impossibilité de maintenir ce contrat pour un motif étranger à la grossesse ou à l'accouchement. Dans ce cas, la rupture du contrat de travail ne peut prendre effet ou être notifiée pendant les périodes de suspension du contrat de travail mentionnées au premier alinéa.<br/>
+</CONTENU>
+</BLOC_TEXTUEL>
+<LIENS>
+<LIEN cidtexte="JORFTEXT000000871608" datesignatexte="1988-02-15" id="LEGIARTI000021367651" naturetexte="DECRET" nortexte="INTB8800027D" num="41" numtexte="88-145" sens="cible" typelien="CITATION">Décret n°88-145 du 15 février 1988 - art. 41 (V)</LIEN>
+<LIEN cidtexte="JORFTEXT000000465978" datesignatexte="2007-03-12" id="JORFTEXT000000465978" naturetexte="ORDONNANCE" nortexte="SOCX0700017R" num="" numtexte="2007-329" sens="source" typelien="CODIFICATION">Ordonnance 2007-329 2007-03-12 JORF 13 mars 2007</LIEN>
+
+
+
+
+
+
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646770" naturetexte="CODE" nortexte="" num="L122-25-2" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L122-25-2 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646063" naturetexte="CODE" nortexte="" num="L122-27" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L122-27 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646063" naturetexte="CODE" nortexte="" num="L122-27" numtexte="" sens="source" typelien="CONCORDANCE">Code du travail - art. L122-27 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900890" naturetexte="CODE" nortexte="" num="L1225-11" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1225-11 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900894" naturetexte="CODE" nortexte="" num="L1225-15" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1225-15 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000029962521" naturetexte="CODE" nortexte="" num="L1225-28" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1225-28 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018764609" naturetexte="CODE" nortexte="" num="L1225-38" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1225-38 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900885" naturetexte="CODE" nortexte="" num="L1225-6" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1225-6 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGITEXT000006072050" naturetexte="CODE" nortexte="" num="" numtexte="" sens="source" typelien="CONCORDANCE">Code du travail L122-25-2 alinéa 1</LIEN>
+
+
+</LIENS>
+</ARTICLE>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARTICLE>
+<META>
+<META_COMMUN>
+<ID>LEGIARTI000006900849</ID>
+<ANCIEN_ID>WXXXXXXXXXX1221L0100XX0A</ANCIEN_ID>
+<ORIGINE>LEGI</ORIGINE>
+<URL>article/LEGI/ARTI/00/00/06/90/08/LEGIARTI000006900849.xml</URL>
+<NATURE>Article</NATURE>
+</META_COMMUN>
+<META_SPEC>
+<META_ARTICLE>
+<NUM>L1221-10</NUM>
+
+<ETAT>VIGUEUR</ETAT>
+
+<DATE_DEBUT>2008-05-01</DATE_DEBUT>
+<DATE_FIN>2999-01-01</DATE_FIN>
+
+
+<TYPE>AUTONOME</TYPE>
+</META_ARTICLE>
+</META_SPEC>
+</META>
+<CONTEXTE>
+<TEXTE autorite="" cid="LEGITEXT000006072050" date_publi="2999-01-01" date_signature="2999-01-01" ministere="" nature="CODE" nor="" num="">
+<TITRE_TXT c_titre_court="Code du travail" debut="1973-01-03" fin="2999-01-01" id_txt="LEGITEXT000006072050">Code du travail</TITRE_TXT>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006112874">Partie législative  </TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006132321">Première partie : Les relations individuelles de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006145393">Livre II : Le contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006160709">Titre II : Formation et exécution du contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006177850">Chapitre Ier : Formation du contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006189416">Section 3 : Formalités à l'embauche et à l'emploi</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006195587">Sous-section 1 : Déclaration préalable à l'embauche.</TITRE_TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TEXTE>
+</CONTEXTE>
+
+<VERSIONS>
+<VERSION etat="VIGUEUR">
+<LIEN_ART debut="2008-05-01" etat="VIGUEUR" fin="2999-01-01" id="LEGIARTI000006900849" num="L1221-10" origine="LEGI"/>
+</VERSION>
+</VERSIONS>
+<NOTA>
+<CONTENU>
+<br/>
+<br/>
+<br/>
+<p>
+<br clear="none"/>
+</p>
+</CONTENU>
+</NOTA>
+<BLOC_TEXTUEL>
+<CONTENU>
+<br/>   L'embauche d'un salarié ne peut intervenir qu'après déclaration nominative accomplie par l'employeur auprès des organismes de protection sociale désignés à cet effet.<br/>
+<br/>   L'employeur accomplit cette déclaration dans tous les lieux de travail où sont employés des salariés.<br/>
+</CONTENU>
+</BLOC_TEXTUEL>
+<LIENS>
+<LIEN cidtexte="JORFTEXT000000465978" datesignatexte="2007-03-12" id="JORFTEXT000000465978" naturetexte="ORDONNANCE" nortexte="SOCX0700017R" num="" numtexte="2007-329" sens="source" typelien="CODIFICATION">Ordonnance 2007-329 2007-03-12 JORF 13 mars 2007</LIEN>
+
+<LIEN cidtexte="LEGITEXT000020908868" datesignatexte="2999-01-01" id="LEGIARTI000029232330" naturetexte="CODE" nortexte="" num="D331-14" numtexte="" sens="cible" typelien="CITATION">Code du cinéma et de l'image animée - art. D331-14 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000020908868" datesignatexte="2999-01-01" id="LEGIARTI000029232466" naturetexte="CODE" nortexte="" num="D331-61" numtexte="" sens="cible" typelien="CITATION">Code du cinéma et de l'image animée - art. D331-61 (V)</LIEN>
+<LIEN cidtexte="JORFTEXT000021358095" datesignatexte="2009-11-30" id="LEGIARTI000021361072" naturetexte="DECRET" nortexte="MCCK0918765D" num="15" numtexte="2009-1465" sens="cible" typelien="CITATION">Décret n°2009-1465
+ du 30 novembre 2009 - art. 15 (Ab)</LIEN>
+<LIEN cidtexte="LEGITEXT000023086525" datesignatexte="2999-01-01" id="LEGIARTI000027724362" naturetexte="CODE" nortexte="" num="L5542-5" numtexte="" sens="cible" typelien="CITATION">Code des transports - art. L5542-5 (V)</LIEN>
+
+
+
+<LIEN cidtexte="LEGITEXT000006074069" datesignatexte="2999-01-01" id="LEGIARTI000027572654" naturetexte="CODE" nortexte="" num="L262-43" numtexte="" sens="cible" typelien="CITATION">Code de l'action sociale et des familles - art. L262-43 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006073189" datesignatexte="2999-01-01" id="LEGIARTI000018503686" naturetexte="CODE" nortexte="" num="R133-33" numtexte="" sens="cible" typelien="CITATION">Code de la sécurité sociale. - art. R133-33 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018520702" naturetexte="CODE" nortexte="" num="D8222-5" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. D8222-5 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900857" naturetexte="CODE" nortexte="" num="L1221-17" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1221-17 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000029321858" naturetexte="CODE" nortexte="" num="L1272-4" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1272-4 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000019290050" naturetexte="CODE" nortexte="" num="L1273-5" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1273-5 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000019290002" naturetexte="CODE" nortexte="" num="L1274-4" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1274-4 (VT)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006901568" naturetexte="CODE" nortexte="" num="L1522-7" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L1522-7 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006648021" naturetexte="CODE" nortexte="" num="L320" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L320 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006650409" naturetexte="CODE" nortexte="" num="L620-3" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L620-3 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006904588" naturetexte="CODE" nortexte="" num="L7122-24" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L7122-24 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000024197698" naturetexte="CODE" nortexte="" num="L8221-5" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L8221-5 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000019285920" naturetexte="CODE" nortexte="" num="L8221-6" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L8221-6 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006904824" naturetexte="CODE" nortexte="" num="L8222-2" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L8222-2 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000024288620" naturetexte="CODE" nortexte="" num="L8256-2" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. L8256-2 (VT)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000022265959" naturetexte="CODE" nortexte="" num="R1221-16" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R1221-16 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018537748" naturetexte="CODE" nortexte="" num="R1227-1" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R1227-1 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018537736" naturetexte="CODE" nortexte="" num="R1227-7" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R1227-7 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000028975847" naturetexte="CODE" nortexte="" num="R7122-31" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R7122-31 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018521677" naturetexte="CODE" nortexte="" num="R7122-32" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R7122-32 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000018521671" naturetexte="CODE" nortexte="" num="R7122-35" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R7122-35 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGITEXT000006072050" naturetexte="CODE" nortexte="" num="" numtexte="" sens="source" typelien="CONCORDANCE">Code du travail L620-3 alinéa 4</LIEN>
+<LIEN cidtexte="LEGITEXT000006071367" datesignatexte="2999-01-01" id="LEGIARTI000022140637" naturetexte="CODE" nortexte="" num="D741-63-4" numtexte="" sens="cible" typelien="CITATION">Code rural et de la pêche maritime - art. D741-63-4 (Ab)</LIEN>
+<LIEN cidtexte="LEGITEXT000006071367" datesignatexte="2999-01-01" id="LEGIARTI000029582228" naturetexte="CODE" nortexte="" num="L712-6" numtexte="" sens="cible" typelien="CITATION">Code rural et de la pêche maritime - art. L712-6 (V)</LIEN>
+
+
+</LIENS>
+</ARTICLE>
