@@ -25,13 +25,13 @@ class DocumentsController < ApplicationController
       law = Law.where(name: law_name).first
       article_number = reference[:num].gsub(". ", "")
       article = Article.where(law_id: law.id, number: article_number).first
-      @reference = @document.references.build({article_id: article.id})
+      @reference = @document.references.build({article_id: article.id, paragraph_number: reference[:paragraph_number]})
       @reference.save
     end
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to document_path(@document), notice: 'Document was successfully created.' }
+        format.html { redirect_to new_document_reference_path(@document), notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
-    @references = extracting_articles(@document)
+    @references = Reference.where(document_id: @document.id)
   end
 
   private
@@ -60,13 +60,13 @@ class DocumentsController < ApplicationController
 
   def extracting_articles(doc)
     references = []
-    doc.paragraphs.each do |paragraph|
+    doc.paragraphs.each_with_index do |paragraph, p_index|
       matchdata = paragraph.scan(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i)
-      matchdata.each_with_index do |data, index|
+      matchdata.each do |data|
         reference = {
-        index: index + 1,
         num: data[0].strip,
-        name: data[1].strip.capitalize
+        name: data[1].strip.capitalize,
+        paragraph_number: p_index
       }
       references << reference
       end
