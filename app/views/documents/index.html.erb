@@ -23,11 +23,11 @@
             <% @documents.each do |doc| %>
               <tr>
                 <td><%= doc.id %></td>
-                <% if doc.name %>
-                  <td><%= doc.name %></td>
-                <% else %>
-                  <td><%= doc.doc_file_file_name %></td>
-                <% end %>
+                  <% if doc.name %>
+                    <td><%= doc.name %></td>
+                  <% else %>
+                    <td><%= doc.doc_file_file_name %></td>
+                  <% end %>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
                   <% if doc.references.exclude?("uptodate") %>
