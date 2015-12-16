@@ -7,10 +7,10 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: $brand-color-2;
+    background-color: $brand-color;
     color: white;
     font-size: 14px;
-    border: 2px solid lighten($brand-color-2, 5%);
+    border: 2px solid lighten($brand-color, 5%);
 
     &:hover {
       color: white;
@@ -104,3 +104,26 @@
     margin-right: 10px;
   }
 }
+.header {
+  backgroung: #fff;
+  border-bottom: 1px solid $gray;
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-logo-container {
+  flex: 1;
+}
+
+.header-logo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.header-container {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
