@@ -2,19 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Varela:400");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Varela", "Helvetica", "sans-serif";
-
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$header-font: "Open Sans", "Helvetica", "sans-serif";
 
 // Font-size and line-height
 $base-size: 16px;
@@ -24,8 +14,7 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$brand-color: #00AECC;
-$brand-color-2: #0067A3;
+$brand-color: #293361;
 
 
 $red: #EE5F5B;
