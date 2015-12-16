@@ -1,30 +1,32 @@
-<div class="container log-in">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Welcome to Lexy</h2>
-      <h4>Please take a moment to create an account</h4>
-    </div>
-  <div class="panel-body">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html=> { class: 'form-vertical' }) do |f| %>
-      <%= f.error_notification %>
-        <div class="form-inputs">
-          <div class="form-group">
-            <%= f.input :email, required: true, autofocus: true, hint: "Type in your professional e-mail address" %>
+<div class="text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_url "banner-logo" %>);">
+  <div class="container log-in">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>Welcome to Lexy</h2>
+        <h4>Please take a moment to create an account</h4>
+      </div>
+    <div class="panel-body">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html=> { class: 'form-vertical' }) do |f| %>
+        <%= f.error_notification %>
+          <div class="form-inputs">
+            <div class="form-group">
+              <%= f.input :email, required: true, autofocus: true, hint: "Type in your professional e-mail address" %>
+            </div>
+            <div class="form-group">
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            </div>
+            <div class="form-group">
+              <%= f.input :password_confirmation, required: true, hint: "Confirm your password" %>
+            </div>
           </div>
-          <div class="form-group">
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <div class="form-actions">
+            <%= f.button :submit, "Let's start", class: "btn btn-success" %>
           </div>
-          <div class="form-group">
-            <%= f.input :password_confirmation, required: true, hint: "Confirm your password" %>
-          </div>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Let's start", class: "btn btn-success" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="panel-footer panel-footer-custom">
-      <%= render "devise/shared/links" %>
+        <% end %>
+      </div>
+      <div class="panel-footer panel-footer-custom">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
