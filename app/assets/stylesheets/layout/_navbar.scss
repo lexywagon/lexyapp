@@ -7,10 +7,10 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: $blue;
+    background-color: $brand-color-2;
     color: white;
     font-size: 14px;
-    border: 2px solid $blue;
+    border: 2px solid lighten($brand-color-2, 5%);
 
     &:hover {
       color: white;
@@ -55,15 +55,15 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #D23333;
+    background-color: $brand-color;
     color: white;
     font-size: 14px;
-    border: 2px solid $brand-color;
+    border: 2px solid lighten($brand-color, 5px);
 
     &:hover {
       color: white;
-      background: $brand-color;
-      border-color: darken($brand-color, 10%);
+      background: $blue;
+      border-color: darken($blue, 10%);
     }
   }
   &-dropdown-menu {
