@@ -23,7 +23,11 @@
             <% @documents.each do |doc| %>
               <tr>
                 <td><%= doc.id %></td>
-                <td><%= doc.doc_file_file_name %></td>
+                <% if doc.name %>
+                  <td><%= doc.name %></td>
+                <% else %>
+                  <td><%= doc.doc_file_file_name %></td>
+                <% end %>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
 <!--                 Only if doc.up-to-date == true
@@ -35,8 +39,11 @@
       </div>
       <div class="panel-footer">
         <%= form_for @document do |f| %>
+        <%= f.label "Select a document" %>
         <%= f.file_field :doc_file %>
-        <%= f.submit %>
+        <%= f.submit "Upload" %>
+        <%= f.label "Name" %>
+        <%= f.text_field :name %>
       <% end %>
       </div>
     </div>
