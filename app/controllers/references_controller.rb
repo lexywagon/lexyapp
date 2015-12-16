@@ -8,4 +8,13 @@ class ReferencesController < ApplicationController
       }
     end
   end
+
+  def create
+    params[:references].each do |key, value|
+      ref = Reference.find(key)
+      ref.status = value[:status]
+      ref.save
+    end
+    redirect_to documents_path(@document)
+  end
 end
