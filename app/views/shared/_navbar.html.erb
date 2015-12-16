@@ -1,12 +1,11 @@
-<nav class="navbar-wagon">
-  <div class="container navbar-wagon-container">
+<nav class="header">
+  <div class="container header-container">
 
-      <%= link_to root_path do %>
-        <%=  image_tag "logo.jpg", class: "navbar-wagon-logo navbar-wagon-container" %>
+    <div class="header-logo-container">
+      <%= link_to root_path, class: "header-logo" do %>
+        Lexy
       <% end  %>
-
-
-    <div class="navbar-wagon-pusher"></div>
+    </div>
 
     <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
@@ -41,8 +40,6 @@
       </div>
     <% else %>
       <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-item" %>
-      <hr class="hidden-xs hidden-sm">
-      <%= link_to t(".sign_in", default: "Create an account"), new_user_registration_path, class: "navbar-wagon-item" %>
     <% end %>
     <hr>
     <% if user_signed_in? %>
