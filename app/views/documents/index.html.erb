@@ -30,7 +30,11 @@
                 <% end %>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
-                <td class="success">Up-to-date</td>
+                  <% if doc.references.exclude?("uptodate") %>
+                    <td class="warning">Issues pending</td>
+                  <% else %>
+                    <td class="success">Up-to-date</td>
+                  <% end %>
               </tr>
             <% end %>
           </tbody>
