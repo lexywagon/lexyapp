@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARTICLE>
+<META>
+<META_COMMUN>
+<ID>LEGIARTI000006900814</ID>
+<ANCIEN_ID>WXXXXXXXXXX1146L0010XX0A</ANCIEN_ID>
+<ORIGINE>LEGI</ORIGINE>
+<URL>article/LEGI/ARTI/00/00/06/90/08/LEGIARTI000006900814.xml</URL>
+<NATURE>Article</NATURE>
+</META_COMMUN>
+<META_SPEC>
+<META_ARTICLE>
+<NUM>L1146-1</NUM>
+
+<ETAT>VIGUEUR</ETAT>
+
+<DATE_DEBUT>2008-05-01</DATE_DEBUT>
+<DATE_FIN>2999-01-01</DATE_FIN>
+
+
+<TYPE>AUTONOME</TYPE>
+</META_ARTICLE>
+</META_SPEC>
+</META>
+<CONTEXTE>
+<TEXTE autorite="" cid="LEGITEXT000006072050" date_publi="2999-01-01" date_signature="2999-01-01" ministere="" nature="CODE" nor="" num="">
+<TITRE_TXT c_titre_court="Code du travail" debut="1973-01-03" fin="2999-01-01" id_txt="LEGITEXT000006072050">Code du travail</TITRE_TXT>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006112874">Partie législative  </TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006132321">Première partie : Les relations individuelles de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006145392">Livre Ier : Dispositions préliminaires</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006160705">Titre IV : Egalité professionnelle entre les femmes et les hommes</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006177843">Chapitre VI : Dispositions pénales.</TITRE_TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TEXTE>
+</CONTEXTE>
+
+<VERSIONS>
+<VERSION etat="VIGUEUR">
+<LIEN_ART debut="2008-05-01" etat="VIGUEUR" fin="2999-01-01" id="LEGIARTI000006900814" num="L1146-1" origine="LEGI"/>
+</VERSION>
+</VERSIONS>
+<NOTA>
+<CONTENU>
+<br/>
+<br/>
+<br/>
+<p>
+<br clear="none"/>
+</p>
+</CONTENU>
+</NOTA>
+<BLOC_TEXTUEL>
+<CONTENU>
+<br/>Le fait de méconnaître les dispositions relatives à l'égalité professionnelle entre les femmes et les hommes, prévues par les articles L. 1142-1 et L. 1142-2, est puni d'un emprisonnement d'un an et d'une amende de 3 750 Euros. <br/>
+<br/>La juridiction peut également ordonner, à titre de peine complémentaire, l'affichage du jugement aux frais de la personne condamnée dans les conditions prévues à l'article 131-35 du code pénal et son insertion, intégrale ou par extraits, dans les journaux qu'elle désigne. Ces frais ne peuvent excéder le montant maximum de l'amende encourue.<br/>
+</CONTENU>
+</BLOC_TEXTUEL>
+<LIENS>
+<LIEN cidtexte="JORFTEXT000000438720" datesignatexte="2004-06-17" id="LEGIARTI000029336766" naturetexte="ORDONNANCE" nortexte="ECOX0400035R" num="4" numtexte="2004-559" sens="cible" typelien="CITATION">Ordonnance n° 2004-559 du 17 juin 2004 - art. 4 (VT)</LIEN>
+<LIEN cidtexte="JORFTEXT000000629820" datesignatexte="2005-06-06" id="LEGIARTI000031086665" naturetexte="ORDONNANCE" nortexte="ECOX0500022R" num="8" numtexte="2005-649" sens="cible" typelien="CITATION">Ordonnance n° 2005-649 du 6 juin 2005 - art. 8 (VD)</LIEN>
+<LIEN cidtexte="JORFTEXT000000465978" datesignatexte="2007-03-12" id="JORFTEXT000000465978" naturetexte="ORDONNANCE" nortexte="SOCX0700017R" num="" numtexte="2007-329" sens="source" typelien="CODIFICATION">Ordonnance 2007-329 2007-03-12 JORF 13 mars 2007</LIEN>
+
+<LIEN cidtexte="JORFTEXT000023781167" datesignatexte="2011-03-29" id="LEGIARTI000023782430" naturetexte="LOI_ORGANIQUE" nortexte="JUSX0918101L" num="28" numtexte="2011-333" sens="cible" typelien="CITATION">LOI organique n°2011-333
+ du 29 mars 2011 - art. 28 (V)</LIEN>
+
+
+
+
+
+
+<LIEN cidtexte="JORFTEXT000030920376" datesignatexte="2015-07-23" id="LEGIARTI000030922105" naturetexte="ORDONNANCE" nortexte="EINM1506103R" num="92" numtexte="2015-899" sens="cible" typelien="CITATION">ORDONNANCE n°2015-899 du 23 juillet 2015 - art. 92 (VD)</LIEN>
+<LIEN cidtexte="JORFTEXT000030920376" datesignatexte="2015-07-23" id="LEGIARTI000030922117" naturetexte="ORDONNANCE" nortexte="EINM1506103R" num="98" numtexte="2015-899" sens="cible" typelien="CITATION">ORDONNANCE n°2015-899 du 23 juillet 2015 - art. 98 (VD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006070719" datesignatexte="2999-01-01" id="LEGIARTI000006417308" naturetexte="CODE" nortexte="" num="131-35" numtexte="" sens="source" typelien="CITATION">Code pénal - art. 131-35 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006074228" datesignatexte="2999-01-01" id="LEGIARTI000031534719" naturetexte="CODE" nortexte="" num="R212-4" numtexte="" sens="cible" typelien="CITATION">Code de la route. - art. R212-4 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006071154" datesignatexte="2999-01-01" id="LEGIARTI000026268364" naturetexte="CODE" nortexte="" num="2-6" numtexte="" sens="cible" typelien="CITATION">Code de procédure pénale - art. 2-6 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900801" naturetexte="CODE" nortexte="" num="L1142-1" numtexte="" sens="source" typelien="CITATION">Code du travail - art. L1142-1 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646558" naturetexte="CODE" nortexte="" num="L152-1-1" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L152-1-1 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646554" naturetexte="CODE" nortexte="" num="L152-1-1" numtexte="" sens="source" typelien="CONCORDANCE">Code du travail - art. L152-1-1 (T)</LIEN>
+
+
+
+</LIENS>
+</ARTICLE>

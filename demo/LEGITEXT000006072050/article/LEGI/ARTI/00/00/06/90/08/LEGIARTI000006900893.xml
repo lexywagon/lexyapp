@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARTICLE>
+<META>
+<META_COMMUN>
+<ID>LEGIARTI000006900893</ID>
+<ANCIEN_ID>WXXXXXXXXXX1225L0140XX0A</ANCIEN_ID>
+<ORIGINE>LEGI</ORIGINE>
+<URL>article/LEGI/ARTI/00/00/06/90/08/LEGIARTI000006900893.xml</URL>
+<NATURE>Article</NATURE>
+</META_COMMUN>
+<META_SPEC>
+<META_ARTICLE>
+<NUM>L1225-14</NUM>
+
+<ETAT>VIGUEUR</ETAT>
+
+<DATE_DEBUT>2008-05-01</DATE_DEBUT>
+<DATE_FIN>2999-01-01</DATE_FIN>
+
+
+<TYPE>AUTONOME</TYPE>
+</META_ARTICLE>
+</META_SPEC>
+</META>
+<CONTEXTE>
+<TEXTE autorite="" cid="LEGITEXT000006072050" date_publi="2999-01-01" date_signature="2999-01-01" ministere="" nature="CODE" nor="" num="">
+<TITRE_TXT c_titre_court="Code du travail" debut="1973-01-03" fin="2999-01-01" id_txt="LEGITEXT000006072050">Code du travail</TITRE_TXT>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006112874">Partie législative  </TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006132321">Première partie : Les relations individuelles de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006145393">Livre II : Le contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006160709">Titre II : Formation et exécution du contrat de travail</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006177854">Chapitre V : Maternité, paternité, adoption et éducation des enfants</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006189422">Section 1 : Protection de la grossesse et de la maternité</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006195591">Sous-section 2 : Changements temporaires d'affectation</TITRE_TM>
+<TM>
+<TITRE_TM debut="2008-05-01" fin="2999-01-01" id="LEGISCTA000006198527">Paragraphe 3 : Exposition à des risques particuliers.</TITRE_TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TM>
+</TEXTE>
+</CONTEXTE>
+
+<VERSIONS>
+<VERSION etat="VIGUEUR">
+<LIEN_ART debut="2008-05-01" etat="VIGUEUR" fin="2999-01-01" id="LEGIARTI000006900893" num="L1225-14" origine="LEGI"/>
+</VERSION>
+</VERSIONS>
+<NOTA>
+<CONTENU>
+<br/>
+<br/>
+<br/>
+<p>
+<br clear="none"/>
+</p>
+</CONTENU>
+</NOTA>
+<BLOC_TEXTUEL>
+<CONTENU>
+<br/>Lorsque l'employeur est dans l'impossibilité de proposer un autre emploi à la salariée, il lui fait connaître par écrit, ainsi qu'au médecin du travail, les motifs qui s'opposent à cette affectation temporaire. <br/>
+<br/>Le contrat de travail de la salariée est alors suspendu jusqu'à la date du début du congé de maternité et, lorsqu'elle a accouché, durant la période n'excédant pas un mois prévue au 2° de l'article L. 1225-12. <br/>
+<br/>La salariée bénéficie d'une garantie de rémunération pendant la suspension du contrat de travail, composée de l'allocation journalière prévue à l'article L. 333-1 du code de la sécurité sociale et d'une indemnité complémentaire à la charge de l'employeur, selon les mêmes modalités que celles prévues par les dispositions mentionnées à l'article L. 1226-1, à l'exception des dispositions relatives à l'ancienneté.<br/>
+</CONTENU>
+</BLOC_TEXTUEL>
+<LIENS>
+<LIEN cidtexte="JORFTEXT000000465978" datesignatexte="2007-03-12" id="JORFTEXT000000465978" naturetexte="ORDONNANCE" nortexte="SOCX0700017R" num="" numtexte="2007-329" sens="source" typelien="CODIFICATION">Ordonnance 2007-329 2007-03-12 JORF 13 mars 2007</LIEN>
+
+
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006646048" naturetexte="CODE" nortexte="" num="L122-25-1-2" numtexte="" sens="cible" typelien="CONCORDE">Code du travail - art. L122-25-1-2 (AbD)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900891" naturetexte="CODE" nortexte="" num="L1225-12" numtexte="" sens="source" typelien="CITATION">Code du travail - art. L1225-12 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000006900965" naturetexte="CODE" nortexte="" num="L1226-1" numtexte="" sens="source" typelien="CITATION">Code du travail - art. L1226-1 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGIARTI000023417352" naturetexte="CODE" nortexte="" num="R1225-4" numtexte="" sens="cible" typelien="CITATION">Code du travail - art. R1225-4 (V)</LIEN>
+<LIEN cidtexte="LEGITEXT000006072050" datesignatexte="2999-01-01" id="LEGITEXT000006072050" naturetexte="CODE" nortexte="" num="" numtexte="" sens="source" typelien="CONCORDANCE">Code du travail L122-25-1-2 alinéa 2</LIEN>
+<LIEN cidtexte="LEGITEXT000006073189" datesignatexte="2999-01-01" id="LEGIARTI000006742575" naturetexte="CODE" nortexte="" num="L333-1" numtexte="" sens="source" typelien="CITATION">Code de la sécurité sociale. - art. L333-1 (V)</LIEN>
+</LIENS>
+</ARTICLE>
