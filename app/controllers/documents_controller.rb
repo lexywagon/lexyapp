@@ -3,7 +3,7 @@ require 'docx'
 
 class DocumentsController < ApplicationController
   def index
-    @documents = Document.all
+    @documents = Document.where(user_id: current_user.id)
     @document = Document.new
   end
 
