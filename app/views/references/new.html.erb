@@ -2,17 +2,19 @@
 <%= form_tag(controller: "references", action: "create", method: "post") do %>
   <% @paragraphs.each do |p| %>
     <%= p[:content].html_safe %>
-    <div class="reference">
-      <% p[:references].each_with_index do |ref, index| %>
-        <%= fields_for 'references[]', ref do |ref_f| %>
-          <%= ref_f.text_field :status %>
+    <% if !p[:references].empty? %>
+      <div class="reference">
+        <% p[:references].each do |ref| %>
+          <%= fields_for 'references[]', ref do |ref_f| %>
+            <%= ref_f.text_field :status %>
+          <% end %>
           <%= ref.article.law.name %>
           <%= ref.article.number %>
           <%= ref.article.versions.last.content %>
           <%= ref.status %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
   <%= submit_tag %>
 <% end %>
