@@ -1,0 +1,48 @@
+.reference {
+  margin-left: -15px;
+  margin-right: -15px;
+  background: #f5f5f5;
+  margin-bottom: 12px;
+}
+
+.reference + .reference {
+  margin-top: -13px;
+}
+
+.reference-header {
+  padding: 15px;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  display: flex;
+}
+
+.reference-title {
+  flex: 1;
+  font-size: 18px;
+  line-height: 36px;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.reference-body {
+  padding: 15px;
+  border-bottom: 1px solid #E0E0E0;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.reference-radio {
+  display: none;
+}
+
+.reference-radio:checked + .reference-btn {
+  background: $brand-primary;
+  border-color: lighten($brand-primary, 10%);
+  color: #fff;
+}
+
+.reference-btn ~ .reference-btn {
+  border-left: 0;
+}

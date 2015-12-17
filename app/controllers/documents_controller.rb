@@ -16,6 +16,7 @@ class DocumentsController < ApplicationController
     doc_file = upload_file(params[:document][:doc_file])
 
     @document.paragraphs = parse_doc_paragraphs(doc_file)
+    @document.name = File.basename(doc_file)
 
     File.delete(doc_file_path(doc_file))
 
