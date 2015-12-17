@@ -4,6 +4,7 @@ require 'docx'
 class DocumentsController < ApplicationController
   def index
     @documents = Document.where(user_id: current_user.id)
+    @document = Document.new
   end
 
   def new
@@ -41,7 +42,6 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
-    references = Reference.where(document_id: @document.id)
   end
 
   private
