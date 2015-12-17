@@ -43,7 +43,7 @@
       <div class="panel-footer">
         <%= form_for @document do |f| %>
         <%= f.file_field :doc_file %>
-        <%= f.label "Name" %>
+        <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.submit "Upload", class: "btn btn-primary" %>
       <% end %>
