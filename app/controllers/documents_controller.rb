@@ -48,7 +48,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit([:doc_file])
+    params.require(:document).permit([:doc_file, :name])
   end
 
   def upload_file(uploaded_file)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215172759) do
+ActiveRecord::Schema.define(version: 20151216200253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151215172759) do
     t.integer  "doc_file_file_size"
     t.datetime "doc_file_updated_at"
     t.text     "paragraphs",            default: [],              array: true
+    t.string   "name"
   end
 
   add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
@@ -48,9 +49,9 @@ ActiveRecord::Schema.define(version: 20151215172759) do
   create_table "references", force: :cascade do |t|
     t.integer  "article_id"
     t.integer  "document_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "status",           default: "pending"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "status",           default: "uptodate"
     t.integer  "paragraph_number"
   end
 
