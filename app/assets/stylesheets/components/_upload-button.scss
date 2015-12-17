@@ -1,0 +1,17 @@
+.btn-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.btn-upload input.input-upload {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
