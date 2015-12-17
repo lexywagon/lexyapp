@@ -1,0 +1,16 @@
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > tfoot > tr > td {
+  border-color: #F5F5F5;
+  border-right: 0;
+  border-left: 0;
+}
+
+.panel > .table-bordered > thead > tr:first-child > th {
+  border-bottom: 1px solid #DDD;
+}
+
+.table > thead > tr > th {
+  font-weight: normal;
+  font-size: 13px;
+  color: #969696;
+  background: whitesmoke;
+}

@@ -1,14 +1,17 @@
-<div class="container text-center">
-  <h1>My Lexy dashboard</h1>
-</div>
-
 <div class="documents">
   <div class="container">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Documents</h3>
+    <% if @documents.empty? %>
+      <div class="text-center">
+        <%= form_for @document, :html => {:class => 'form-upload'} do |f| %>
+          <div class="btn btn-primary btn-upload">
+              <span>Upload Your first document</span>
+              <%= f.file_field :doc_file, class: "input-upload" %>
+          </div>
+        <% end %>
       </div>
-       <div class="panel-body">
+    <% else %>
+      <h1>My Documents</h1>
+      <div class="panel panel-primary">
         <table class="table table-bordered table-responsive table-hover">
           <thead>
             <tr>
@@ -30,24 +33,26 @@
                   <% end %>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
-                  <% if doc.references.exclude?("uptodate") %>
-                    <td class="warning">Issues pending</td>
+                  <% if doc.references.find { |ref| ref.status == "changed" } %>
+                    <td><span class="label label-danger">Changes</span></td>
+                  <% elsif doc.references.find { |ref| ref.status == "pending" } %>
+                    <td><span class="label label-info">Pending</span></td>
                   <% else %>
-                    <td class="success">Up-to-date</td>
+                    <td><span class="label label-success">Up-to-date</span></td>
                   <% end %>
               </tr>
             <% end %>
           </tbody>
         </table>
+        <div class="panel-footer">
+          <%= form_for @document, :html => {:class => 'form-upload'} do |f| %>
+            <div class="btn btn-primary btn-upload">
+                <span>Upload a new document</span>
+                <%= f.file_field :doc_file, class: "input-upload" %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="panel-footer">
-        <%= form_for @document do |f| %>
-        <%= f.file_field :doc_file %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.submit "Upload", class: "btn btn-primary" %>
-      <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
