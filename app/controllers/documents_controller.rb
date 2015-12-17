@@ -46,6 +46,29 @@ class DocumentsController < ApplicationController
     @version = Version.new({content: ""})
   end
 
+  def edit
+    @document = Document.find(params[:id])
+    @paragraphs = @document.paragraphs.map.with_index do |paragraph, index|
+      {
+        content: paragraph,
+        references: Reference.where(document_id: @document.id, paragraph_number: index)
+      }
+    end
+  end
+
+  def update
+    @document = Document.find(params[:id])
+    @document.name = params[:document][:name]
+    @document.save
+    params[:references].each do |key, value|
+      ref = Reference.find(key)
+      ref.tracking = value[:tracking]
+      ref.status = value[:status]
+      ref.save
+    end
+    redirect_to documents_path
+  end
+
   private
 
   def document_params

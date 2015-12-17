@@ -1,0 +1,62 @@
+<div class="container">
+  <%= form_tag url_for(controller: "documents", action: "update"), method: :patch do %>
+
+    <%= fields_for @document do |doc_f| %>
+      <%= doc_f.text_field :name, class: "title-field", autocomplete: "off" %>
+    <% end %>
+
+    <div class="panel">
+      <div class="panel-body">
+        <% @paragraphs.each do |p| %>
+          <% content = p[:content].gsub(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i) { |num| "<span class='reference-law'>"+ num + "</span>" } %>
+          <%= content.html_safe %>
+          <% p[:references].each do |ref| %>
+            <div class="reference">
+              <div class="reference-header">
+                <div class="reference-title">
+                  <%= ref.article.law.name %>
+                  <%= ref.article.number %>
+                </div>
+                <div class="reference-button">
+                  <%= fields_for 'references[]', ref do |ref_f| %>
+                    <div class="btn-group" role="group">
+                      <%= ref_f.radio_button :status, "uptodate", class: "reference-radio" %>
+                      <%= ref_f.label :status_uptodate, "Still OK", class: "btn btn-default reference-btn" %>
+                      <%= ref_f.radio_button :status, "pending", class: "reference-radio" %>
+                      <%= ref_f.label :status_pending, "Pending", class: "btn btn-default reference-btn" %>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <%= ref_f.radio_button :tracking, true, class: "reference-radio" %>
+                      <%= ref_f.label :tracking_true, "Track", class: "btn btn-default reference-btn" %>
+                      <%= ref_f.radio_button :tracking, false, class: "reference-radio" %>
+                      <%= ref_f.label :tracking_false, "Don't track", class: "btn btn-default reference-btn" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="reference-body">
+                <% if ref.status == "uptodate" %>
+                  <%= ref.article.versions.last.content %>
+                <% else %>
+                  <% old_version = ref.article.versions[-1].content.gsub("<br/>", "") %>
+                  <% new_version = ref.article.versions[-2].content.gsub("<br/>", "") %>
+                  <div class="row">
+                    <div class="col-sm-6">
+
+                      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).left.html_safe %>
+                    </div>
+                    <div class="col-sm-6">
+                      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).right.html_safe %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <%= submit_tag "Start tracking document", class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
