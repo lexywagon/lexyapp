@@ -12,7 +12,9 @@
       <%= link_to "#", class: "header-item hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-bell-o"></i>
-          <div class="icon-badge icon-badge-red"><%= @notif.length %></div>
+          <% if !@notif.empty? %>
+            <div class="icon-badge icon-badge-red"><%= @notif.length %></div>
+          <% end %>
         </div>
       <% end %>
       <hr>
