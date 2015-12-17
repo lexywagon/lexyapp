@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216200253) do
+ActiveRecord::Schema.define(version: 20151217165504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151216200253) do
     t.datetime "updated_at",                            null: false
     t.string   "status",           default: "uptodate"
     t.integer  "paragraph_number"
+    t.boolean  "tracking"
   end
 
   add_index "references", ["article_id"], name: "index_references_on_article_id", using: :btree

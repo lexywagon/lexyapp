@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def check_for_doc_changes
     if current_user
-      @notif = current_user.documents.select do |doc|
+      @notifications = current_user.documents.select do |doc|
         doc.references.find { |ref| ref.status == "changed" }
       end
     end

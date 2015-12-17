@@ -10,9 +10,13 @@ class ReferencesController < ApplicationController
   end
 
   def create
+    @document = Document.find(params[:document_id])
+    @document.name = params[:document][:name]
+    @document.save
+
     params[:references].each do |key, value|
       ref = Reference.find(key)
-      ref.status = value[:status]
+      ref.tracking = value[:tracking]
       ref.save
     end
     redirect_to documents_path(@document)

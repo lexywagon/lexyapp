@@ -14,3 +14,7 @@
   color: #969696;
   background: whitesmoke;
 }
+
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td {
+  padding: 10px;
+}
