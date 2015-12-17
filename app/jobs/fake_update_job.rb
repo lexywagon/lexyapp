@@ -60,12 +60,6 @@ class FakeUpdateJob < ActiveJob::Base
 
     end
   end
-
-  private
-
-  def send_update_email(user, updated_docs)
-    UserMailer.update(user, updated_docs).deliver_now
-  end
 end
 
 
