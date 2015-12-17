@@ -4,7 +4,6 @@ require 'docx'
 class DocumentsController < ApplicationController
   def index
     @documents = Document.where(user_id: current_user.id)
-    @document = Document.new
   end
 
   def new
