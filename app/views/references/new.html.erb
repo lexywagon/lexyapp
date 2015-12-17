@@ -1,5 +1,5 @@
 <h1>References#new</h1>
-<%= @document.id %><%= form_tag(controller: "references", action: "create", method: "post") do %>
+<%= form_tag(controller: "references", action: "create", method: "post") do %>
   <% @paragraphs.each do |p| %>
     <% if !p[:references].empty? %>
       <% content = p[:content].gsub(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i) { |num| "<span class='reference-law'>"+ num + "</span>" } %>
