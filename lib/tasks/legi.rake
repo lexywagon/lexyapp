@@ -3,4 +3,7 @@ namespace :legi do
   task update: :environment do
     UpdateArticlesJob.perform_later
   end
+  task fake: :environment do
+    FakeUpdateJob.perform_later
+  end
 end
