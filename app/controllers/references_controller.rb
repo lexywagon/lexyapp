@@ -19,6 +19,6 @@ class ReferencesController < ApplicationController
       ref.tracking = value[:tracking]
       ref.save
     end
-    redirect_to documents_path(@document)
+    redirect_to documents_path
   end
 end

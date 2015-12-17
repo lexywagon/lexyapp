@@ -26,11 +26,11 @@
             <% @documents.each do |doc| %>
               <tr>
                 <td><%= doc.id %></td>
-                  <% if doc.name %>
-                    <td><%= doc.name %></td>
-                  <% else %>
-                    <td><%= doc.doc_file_file_name %></td>
+                <td>
+                  <%= link_to edit_document_path(doc) do %>
+                    <%= doc.name || doc.doc_file_file_name %>
                   <% end %>
+                </td>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
                   <% if doc.references.find { |ref| ref.status == "changed" } %>
