@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
-    @references = Reference.where(document_id: @document.id)
+    references = Reference.where(document_id: @document.id)
   end
 
   private
