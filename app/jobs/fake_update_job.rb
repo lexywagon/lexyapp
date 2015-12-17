@@ -32,6 +32,16 @@ class FakeUpdateJob < ActiveJob::Base
             ref.status = "changed"
             ref.save
           end
+          users = User.all
+          users.each do |user|
+            updated_docs = user.documents.select do |document|
+              document.references.find { |ref| ref.status == "changed" }
+            end
+            if updated_docs
+              send_update_email(user, updated_docs)
+            end
+          end
+
         end
       else
         article = code_du_travail.articles.build({
@@ -49,6 +59,12 @@ class FakeUpdateJob < ActiveJob::Base
       end
 
     end
+  end
+
+  private
+
+  def send_update_email(user, updated_docs)
+    UserMailer.update(user, updated_docs).deliver_now
   end
 end
 
