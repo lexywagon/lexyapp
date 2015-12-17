@@ -31,6 +31,9 @@ gem 'sidekiq-failures'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 
+# Diffy - diffs
+gem 'diffy'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

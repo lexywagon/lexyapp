@@ -42,6 +42,7 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+    @version = Version.new({content: ""})
   end
 
   private

@@ -1,16 +1,31 @@
+<h1>Test for Diffy gem</h1>
+
 <h1>Show document</h1>
 <% @document.paragraphs.each do |p| %>
   <%= p.html_safe %>
 <% end  %>
 
+<% old_version = Version.new({content: "Aucune personne ne peut être écartée d'une procédure de recrutement ou de l'accès à un stage ou à une période de formation professionnelle, ni être sanctionnée ou faire l'objet d'une mesure discriminatoire, directe ou indirecte, notamment en matière de rémunération, de traitement, de formation, de reclassement, d'affectation, de qualification, de classification, de promotion professionnelle, de mutation ou de renouvellement de contrat, pour avoir relaté ou témoigné, de bonne foi, soit à son employeur, soit aux autorités judiciaires ou administratives de faits relatifs à un risque grave pour la santé publique ou l'environnement dont elle aurait eu connaissance dans l'exercice de ses fonctions.<br/>
+<br/>  Toute disposition ou tout acte contraire est nul de plein droit.<br/>
+<br/>  Toute personne a le droit d'être informée sur son état de santé. Cette information porte sur les différentes investigations, traitements ou actions de prévention qui sont proposés, leur utilité, leur urgence éventuelle, leurs conséquences, les risques fréquents ou graves normalement prévisibles qu'ils comportent ainsi que sur les autres solutions possibles et sur les conséquences prévisibles en cas de refus. Lorsque, postérieurement à l'exécution des investigations, traitements ou actions de prévention, des risques nouveaux sont identifiés, la personne concernée doit en être informée, sauf en cas d'impossibilité de la retrouver.<br/>
+<br/>  En cas de litige relatif à l'application des deux premiers alinéas, dès lors que la personne établit des faits qui permettent de présumer qu'elle a relaté ou témoigné, de bonne foi, de faits relatifs à un danger pour la santé publique ou l'environnement, il incombe à la partie défenderesse, au vu des éléments, de prouver que sa décision est justifiée par des éléments objectifs étrangers à la déclaration ou au témoignage de l'intéressé. Le juge forme sa conviction après avoir ordonné, en cas de besoin, toutes les mesures d'instruction qu'il estime utiles."}) %>
 
+<% new_version = Version.new({content: "Aucune personne ne peut être écartée d'une procédure de recrutement ou de l'accès à un stage ou à une période de formation professionnelle, ni être sanctionnée ou faire l'objet d'une mesure discriminatoire, directe ou indirecte, notamment en matière de rémunération, de traitement, de formation, de reclassement, d'affectation, de qualification, de classification, de promotion professionnelle, de mutation ou de renouvellement de contrat, pour avoir relaté ou témoigné, de bonne foi, soit à son employeur, soit aux autorités judiciaires ou administratives de faits relatifs à un risque grave pour la santé publique ou l'environnement dont elle aurait eu connaissance dans l'exercice de ses fonctions.<br/>
+<br/>  Toute disposition ou tout acte contraire est nul de plein droit.<br/>
+<br/>  Toute personne a le droit d'être informée sur son état de santé. Cette information porte sur les différentes investigations, traitements ou actions de prévention qui sont proposés, leur utilité, leur urgence éventuelle, leurs conséquences, les risques fréquents ou graves normalement prévisibles qu'ils comportent ainsi que sur les autres solutions possibles et sur les conséquences prévisibles en cas de refus. Lorsque, postérieurement à l'exécution des investigations, traitements ou actions de prévention, des risques nouveaux sont identifiés, la personne concernée doit en être informée, sauf en cas d'impossibilité de la retrouver."}) %>
 
+<% old_version = old_version.content.gsub("<br/>", "") %>
+<% new_version = new_version.content.gsub("<br/>", "") %>
 
-
-<% @references.each do |ref| %>
-  <p><strong>Article: </strong><%= ref[:num] %></p>
-  <p><strong>Law: </strong><%= ref[:name] %></p>
-  <p>*****</p>
-<% end %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Old version</h3>
+      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).left.html_safe %>
+    </div>
+    <div class="col-xs-6">
+      <h3>New version</h3>
+      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).right.html_safe %>
+    </div>
+  </div>
+</div>
