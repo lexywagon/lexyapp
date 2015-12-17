@@ -23,11 +23,18 @@
             <% @documents.each do |doc| %>
               <tr>
                 <td><%= doc.id %></td>
-                <td><%= doc.doc_file_file_name %></td>
+                  <% if doc.name %>
+                    <td><%= doc.name %></td>
+                  <% else %>
+                    <td><%= doc.doc_file_file_name %></td>
+                  <% end %>
                 <td><%= doc.created_at.strftime("%d %B %Y") %></td>
                 <td><%= doc.updated_at.strftime("%d %B %Y") %></td>
-<!--                 Only if doc.up-to-date == true
- -->                <td class="success">Up-to-date</td>
+                  <% if doc.references.exclude?("uptodate") %>
+                    <td class="warning">Issues pending</td>
+                  <% else %>
+                    <td class="success">Up-to-date</td>
+                  <% end %>
               </tr>
             <% end %>
           </tbody>
@@ -36,7 +43,9 @@
       <div class="panel-footer">
         <%= form_for @document do |f| %>
         <%= f.file_field :doc_file %>
-        <%= f.submit %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit "Upload", class: "btn btn-primary" %>
       <% end %>
       </div>
     </div>

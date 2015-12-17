@@ -1,7 +1,8 @@
 <h1>References#new</h1>
 <%= form_tag(controller: "references", action: "create", method: "post") do %>
   <% @paragraphs.each do |p| %>
-    <%= p[:content].html_safe %>
+    <% content = p[:content].gsub(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i) { |num| "<span class='reference-law'>"+ num + "</span>" } %>
+    <%= content.html_safe %>
     <% if !p[:references].empty? %>
       <div class="reference">
         <% p[:references].each do |ref| %>
