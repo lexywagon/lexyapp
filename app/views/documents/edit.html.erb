@@ -8,50 +8,56 @@
     <div class="panel">
       <div class="panel-body">
         <% @paragraphs.each do |p| %>
-          <% content = p[:content].gsub(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i) { |num| "<span class='reference-law'>"+ num + "</span>" } %>
+          <% if p[:references].find { |ref| ref.status != "uptodate" } %>
+            <% content = p[:content].gsub(/(L\..[^a-z]*).+?(?=code)((code du travail|code de la santé publique))/i) { |num| "<span class='reference-law'>"+ num + "</span>" } %>
+          <% else %>
+            <% content = p[:content] %>
+          <% end %>
           <%= content.html_safe %>
           <% p[:references].each do |ref| %>
-            <div class="reference">
-              <div class="reference-header">
-                <div class="reference-title">
-                  Article <%= ref.article.number %> du <%= ref.article.law.name %>
+            <% if ref.status != "uptodate" %>
+              <div class="reference">
+                <div class="reference-header">
+                  <div class="reference-title">
+                    Article <%= ref.article.number %> du <%= ref.article.law.name %>
+                  </div>
+                  <div class="reference-button">
+                    <%= fields_for 'references[]', ref do |ref_f| %>
+                      <div class="btn-group" role="group">
+                        <%= ref_f.radio_button :status, "uptodate", class: "reference-radio" %>
+                        <%= ref_f.label :status_uptodate, "Still OK", class: "btn btn-default reference-btn" %>
+                        <%= ref_f.radio_button :status, "pending", class: "reference-radio" %>
+                        <%= ref_f.label :status_pending, "Pending", class: "btn btn-default reference-btn" %>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <%= ref_f.radio_button :tracking, true, class: "reference-radio" %>
+                        <%= ref_f.label :tracking_true, "Track", class: "btn btn-default reference-btn" %>
+                        <%= ref_f.radio_button :tracking, false, class: "reference-radio" %>
+                        <%= ref_f.label :tracking_false, "Don't track", class: "btn btn-default reference-btn" %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="reference-button">
-                  <%= fields_for 'references[]', ref do |ref_f| %>
-                    <div class="btn-group" role="group">
-                      <%= ref_f.radio_button :status, "uptodate", class: "reference-radio" %>
-                      <%= ref_f.label :status_uptodate, "Still OK", class: "btn btn-default reference-btn" %>
-                      <%= ref_f.radio_button :status, "pending", class: "reference-radio" %>
-                      <%= ref_f.label :status_pending, "Pending", class: "btn btn-default reference-btn" %>
-                    </div>
-                    <div class="btn-group" role="group">
-                      <%= ref_f.radio_button :tracking, true, class: "reference-radio" %>
-                      <%= ref_f.label :tracking_true, "Track", class: "btn btn-default reference-btn" %>
-                      <%= ref_f.radio_button :tracking, false, class: "reference-radio" %>
-                      <%= ref_f.label :tracking_false, "Don't track", class: "btn btn-default reference-btn" %>
+                <div class="reference-body">
+                  <% if ref.status == "uptodate" %>
+                    <%= ref.article.versions.last.content %>
+                  <% else %>
+                    <% old_version = ref.article.versions[-1].content.gsub("<br/>", "") %>
+                    <% new_version = ref.article.versions[-2].content.gsub("<br/>", "") %>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h2 class="reference-version-title">Old Version</h2>
+                        <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).left.html_safe %>
+                      </div>
+                      <div class="col-sm-6">
+                        <h2 class="reference-version-title">New Version</h2>
+                        <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).right.html_safe %>
+                      </div>
                     </div>
                   <% end %>
                 </div>
               </div>
-              <div class="reference-body">
-                <% if ref.status == "uptodate" %>
-                  <%= ref.article.versions.last.content %>
-                <% else %>
-                  <% old_version = ref.article.versions[-1].content.gsub("<br/>", "") %>
-                  <% new_version = ref.article.versions[-2].content.gsub("<br/>", "") %>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <h2 class="reference-version-title">Old Version</h2>
-                      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).left.html_safe %>
-                    </div>
-                    <div class="col-sm-6">
-                      <h2 class="reference-version-title">New Version</h2>
-                      <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).right.html_safe %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         <% end %>
         <%= submit_tag "Confirm", class: "btn btn-primary" %>
