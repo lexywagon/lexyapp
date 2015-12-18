@@ -3,9 +3,12 @@
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
 
+.thumbnail {
+  padding: 35px 4px;
+}
+
 .fastyle-home {
   color: $brand-color;
-  text-shadow: 1px 1px 1px #ccc;
   font-size: 120px;
 }
 
