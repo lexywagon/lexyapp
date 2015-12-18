@@ -14,7 +14,8 @@
             <div class="reference">
               <div class="reference-header">
                 <div class="reference-title">
-                    Article <%= ref.article.number %> du <%= ref.article.law.name.capitalize %>
+                  <%= ref.article.law.name %>
+                  <%= ref.article.number %>
                 </div>
                 <div class="reference-button">
                   <%= fields_for 'references[]', ref do |ref_f| %>

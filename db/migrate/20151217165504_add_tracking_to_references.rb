@@ -1,5 +1,5 @@
 class AddTrackingToReferences < ActiveRecord::Migration
   def change
-    add_column :references, :tracking, :boolean, default: true
+    add_column :references, :tracking, :boolean
   end
 end
