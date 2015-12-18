@@ -1,8 +1,16 @@
+.reference-law {
+  background: #B3C8D3;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 400;
+}
+
 .reference {
   margin-left: -20px;
   margin-right: -20px;
   background: #f5f5f5;
   margin-bottom: 12px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 .reference + .reference {
@@ -11,9 +19,10 @@
 
 .reference-header {
   padding: 15px;
-  border-top: 1px solid #E0E0E0;
-  border-bottom: 1px solid #E0E0E0;
+  border-top: 1px solid #8FA5B0;
+  border-bottom: 1px solid #8FA5B0;
   display: flex;
+  background: #B3C8D3;
 }
 
 .reference-title {
@@ -28,7 +37,7 @@
 
 .reference-body {
   padding: 15px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #AAAAAA;
   max-height: 200px;
   overflow: auto;
 }
@@ -37,12 +46,22 @@
   display: none;
 }
 
+.reference-btn {
+  border-color: #aaa;
+}
+
 .reference-radio:checked + .reference-btn {
   background: $brand-primary;
-  border-color: lighten($brand-primary, 10%);
+  border-color: darken($brand-primary, 10%);
   color: #fff;
 }
 
 .reference-btn ~ .reference-btn {
   border-left: 0;
+}
+
+.reference-version-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  text-align: center;
 }

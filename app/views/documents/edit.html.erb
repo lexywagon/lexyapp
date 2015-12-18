@@ -14,8 +14,7 @@
             <div class="reference">
               <div class="reference-header">
                 <div class="reference-title">
-                  <%= ref.article.law.name %>
-                  <%= ref.article.number %>
+                  Article <%= ref.article.number %> du <%= ref.article.law.name %>
                 </div>
                 <div class="reference-button">
                   <%= fields_for 'references[]', ref do |ref_f| %>
@@ -42,10 +41,11 @@
                   <% new_version = ref.article.versions[-2].content.gsub("<br/>", "") %>
                   <div class="row">
                     <div class="col-sm-6">
-
+                      <h2 class="reference-version-title">Old Version</h2>
                       <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).left.html_safe %>
                     </div>
                     <div class="col-sm-6">
+                      <h2 class="reference-version-title">New Version</h2>
                       <%= Diffy::SplitDiff.new(old_version, new_version, :format => :html, :include_plus_and_minus_in_html => true).right.html_safe %>
                     </div>
                   </div>
@@ -54,7 +54,7 @@
             </div>
           <% end %>
         <% end %>
-        <%= submit_tag "Start tracking document", class: "btn btn-primary" %>
+        <%= submit_tag "Confirm", class: "btn btn-primary" %>
       </div>
     </div>
 
