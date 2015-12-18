@@ -14,10 +14,12 @@ class ReferencesController < ApplicationController
     @document.name = params[:document][:name]
     @document.save
 
-    params[:references].each do |key, value|
-      ref = Reference.find(key)
-      ref.tracking = value[:tracking]
-      ref.save
+    if params[:references]
+      params[:references].each do |key, value|
+        ref = Reference.find(key)
+        ref.tracking = value[:tracking]
+        ref.save
+      end
     end
     redirect_to documents_path
   end

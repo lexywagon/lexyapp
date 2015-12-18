@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20151217165504) do
     t.datetime "updated_at",                            null: false
     t.string   "status",           default: "uptodate"
     t.integer  "paragraph_number"
-    t.boolean  "tracking"
+    t.boolean  "tracking",         default: true
   end
 
   add_index "references", ["article_id"], name: "index_references_on_article_id", using: :btree
