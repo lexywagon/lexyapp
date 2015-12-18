@@ -60,11 +60,13 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @document.name = params[:document][:name]
     @document.save
-    params[:references].each do |key, value|
-      ref = Reference.find(key)
-      ref.tracking = value[:tracking]
-      ref.status = value[:status]
-      ref.save
+    if params[:references]
+      params[:references].each do |key, value|
+        ref = Reference.find(key)
+        ref.tracking = value[:tracking]
+        ref.status = value[:status]
+        ref.save
+      end
     end
     redirect_to documents_path
   end
