@@ -20,7 +20,7 @@
           <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu" aria-labelledby="notifications-menu">
             <% @notifications.each do |doc| %>
               <li>
-                <%= link_to doc.doc_file_file_name, edit_document_path(doc) %>
+                <%= link_to doc.name, edit_document_path(doc) %>
               </li>
             <% end %>
           </ul>
