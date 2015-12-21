@@ -19,7 +19,10 @@
               <%= f.input :password_confirmation, required: true, hint: "Confirm your password" %>
             </div>
             <div class="form-group">
-              <%= f.input :terms, :checked_value => true, :unchecked_value => false, :inline_label => 'I have read and accept the Terms of use.' %>
+                <%= content_for(:link) do %>
+                  I have read and accept the <%= link_to "Terms of use", pages_path("terms"), :remote => true  %>
+                <% end %>
+                <%= f.input :terms, :checked_value => true, :unchecked_value => false, :label => content_for(:link) %>
             </div>
           </div>
           <div class="form-actions">
