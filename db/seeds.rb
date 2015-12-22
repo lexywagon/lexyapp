@@ -1,5 +1,8 @@
 require "nokogiri"
 
+## db/legi/*/article/**/*.xml, get codes/law in local_path and parse them
+## seeding of database
+
 Dir.glob("db/legi/*/article/**/*.xml") do |article|
   doc = File.open(article) { |f| Nokogiri::XML(f) }
 
