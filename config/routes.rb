@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root to: 'pages#home'
+  get '/terms' => 'pages#terms'
+  match ':terms', :controller => 'pages', :action => 'show', :as => 'pages', :via => :get
+
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
