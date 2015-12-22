@@ -1,7 +1,8 @@
 require "nokogiri"
 
-## db/legi/*/article/**/*.xml, get codes/law in local_path and parse them
-## seeding of database
+## Seeding of database
+# 1. Post db locally in path db/***/.xml
+# 2. $ rake db:seed
 
 Dir.glob("db/legi/*/article/**/*.xml") do |article|
   doc = File.open(article) { |f| Nokogiri::XML(f) }

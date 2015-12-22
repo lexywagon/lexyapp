@@ -5,7 +5,16 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 ```
 seed localhost DB
-seed file instructions in seeds.rb to populate database with new laws and new codes
+1. seed file instructions in seeds.rb to populate database with new laws and new codes
+2. after rake db:seed
+$  pg_dump -Fc --no-acl --no-owner -h localhost -U adrienvandenbrandendereeth lexyapp_development > mydb.dump
+* To know name of db ==> $ psql -l
+Usually, it is NAMEOFAPP_development
+** Name mydb.dump as YYMMDD_lexyapp_development.dump
+3. Move exported db to app/assets/dump folder
+*More info on: https://devcenter.heroku.com/articles/heroku-postgres-import-export
+3. export local db and place in app/assets/dump folder
+
 ```
 
 ```
